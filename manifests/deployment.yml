@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myk801-b3fe"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myk801-b3fe"
+  template:
+    metadata:
+      labels:
+        app: "myk801-b3fe"
+    spec:
+      containers:
+        - name: "myk801-b3fe"
+          image: "azurecontaineren01.azurecr.io/myk801"
+          ports:
+          - containerPort: 8080
